@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "build": "./node_modules/typescript/bin/tsc -p ./js/ && node ./node_modules/browserify/bin/cmd ./js/app.js -o ./js/bundle.js",
-    "start": "node ./serve.js"
+    "start": "node ./serve.js",
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "@types/classnames": "^2.2.6",
@@ -17,7 +18,12 @@
   },
   "devDependencies": {
     "browserify": "^16.2.3",
+    "cypress": "^5.5.0",
+    "cypress-cucumber-preprocessor": "^4.0.0",
     "node-static": "^0.7.11",
     "typescript": "^2.9.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }

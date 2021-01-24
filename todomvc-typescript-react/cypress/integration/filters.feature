@@ -5,7 +5,6 @@ Feature: Filters
       | A test todo       | false     |
       | Another test todo | true      |
     And I navigate to the home page
-    And the home page has loaded
     When I filter by "active"
     Then I see the following todos:
       | title       | completed |
@@ -18,7 +17,6 @@ Feature: Filters
       | A test todo       | false     |
       | Another test todo | true      |
     And I navigate to the home page
-    And the home page has loaded
     When I filter by "completed"
     Then I see the following todos:
       | title             | completed |
@@ -31,7 +29,6 @@ Feature: Filters
       | A test todo       | false     |
       | Another test todo | true      |
     And I navigate to the home page
-    And the home page has loaded
     And I filter by "completed"
     When I filter by "all"
     Then I see the following todos:

@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "browserify": "^16.2.3",
-    "cypress": "^5.5.0",
-    "cypress-cucumber-preprocessor": "^4.0.0",
+    "cypress": "^6.4.0",
+    "cypress-cucumber-preprocessor": "^4.0.1",
     "node-static": "^0.7.11",
     "typescript": "^2.9.2"
   },

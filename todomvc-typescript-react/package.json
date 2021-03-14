@@ -3,7 +3,8 @@
   "scripts": {
     "build": "./node_modules/typescript/bin/tsc -p ./js/ && node ./node_modules/browserify/bin/cmd ./js/app.js -o ./js/bundle.js",
     "start": "node ./serve.js",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:report": "node ./cypress/report.js"
   },
   "dependencies": {
     "@types/classnames": "^2.2.6",
@@ -20,10 +21,14 @@
     "browserify": "^16.2.3",
     "cypress": "^6.4.0",
     "cypress-cucumber-preprocessor": "^4.0.1",
+    "multiple-cucumber-html-reporter": "^1.18.0",
     "node-static": "^0.7.11",
     "typescript": "^2.9.2"
   },
   "cypress-cucumber-preprocessor": {
+    "cucumberJson": {
+      "generate": true
+    },
     "nonGlobalStepDefinitions": true
   }
 }

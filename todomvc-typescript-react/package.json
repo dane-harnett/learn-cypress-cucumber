@@ -4,7 +4,8 @@
     "build": "./node_modules/typescript/bin/tsc -p ./js/ && node ./node_modules/browserify/bin/cmd ./js/app.js -o ./js/bundle.js",
     "start": "node ./serve.js",
     "cy:open": "cypress open",
-    "cy:report": "node ./cypress/report.js"
+    "cy:report": "node ./cypress/report.js",
+    "cy:run": "cypress run"
   },
   "dependencies": {
     "@types/classnames": "^2.2.6",

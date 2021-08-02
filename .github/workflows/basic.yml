@@ -28,6 +28,8 @@ jobs:
         with:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          aws_bucket: learn-cypress-cucumber-reports
           source_dir: 'todomvc-typescript-react/cypress/cucumber-report'
+      - name: Link to report
+        run: echo "https://learn-cypress-cucumber-reports.s3-ap-southeast-2.amazonaws.com/${{steps.S3.outputs.object_key}}/index.html"
 

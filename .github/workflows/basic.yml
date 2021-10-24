@@ -15,3 +15,10 @@ jobs:
           install-command: npm install
           build: npm run build
           start: npm start
+      - name: Generate report
+        run: cd todomvc-typescript-react && npm run cy:report
+      - name: Upload report
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-cucumber-report
+          path: todomvc-typescript-react/cypress/cucumber-report/

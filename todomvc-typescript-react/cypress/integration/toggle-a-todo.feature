@@ -21,6 +21,7 @@ Feature: Toggle a todo
       | A test todo | false     |
     And I see that I have "1 item left"
 
+  @all-todos
   Scenario: Complete all todos
     Given I have the following todos:
       | title              | completed |
@@ -36,6 +37,7 @@ Feature: Toggle a todo
       | A third test todo  | true      |
     And I see that I have "0 items left"
 
+  @all-todos
   Scenario: Un-complete all todos
     Given I have the following todos:
       | title              | completed |

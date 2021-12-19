@@ -19,3 +19,14 @@ import "./commands";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+afterEach(() => {
+  const testState = window.testState;
+  const stepResult =
+    testState.runTests[testState.currentScenario.name][testState.currentStep];
+  if (stepResult?.status !== "failed") {
+    cy.screenshot(
+      `${testState.feature.name} -- ${testState.currentScenario.name} (passed)`
+    );
+  }
+});

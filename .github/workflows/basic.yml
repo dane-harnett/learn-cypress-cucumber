@@ -1,5 +1,6 @@
 name: End-to-end tests
-on: [push]
+on: 
+   workflow_dispatch: 
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
@@ -22,13 +23,3 @@ jobs:
         with:
           name: cypress-cucumber-report
           path: todomvc-typescript-react/cypress/cucumber-report/
-      - uses: shallwefootball/s3-upload-action@master
-        name: Upload S3
-        id: S3
-        with:
-          aws_key_id: ${{ secrets.AWS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_bucket: learn-cypress-cucumber-reports
-          source_dir: 'todomvc-typescript-react/cypress/cucumber-report'
-      - name: Link to report
-        run: echo "https://learn-cypress-cucumber-reports.s3-ap-southeast-2.amazonaws.com/${{steps.S3.outputs.object_key}}/index.html"
